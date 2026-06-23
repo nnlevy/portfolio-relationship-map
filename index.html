@@ -1,1 +1,38 @@
-__MAP_HTML_PLACEHOLDER__
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Domain Platform Relationship Map</title><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></head>
+<body class="bg-[#0b1120] text-slate-200">
+<div class="max-w-3xl mx-auto p-8">
+  <div class="flex items-center gap-4 mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center"><i class="fa-solid fa-project-diagram text-3xl"></i></div>
+    <div><div class="font-semibold text-3xl tracking-tighter">Domain Platform OS</div><div class="text-emerald-400 text-sm -mt-1">Visual Relationship Map — Interactive</div></div>
+  </div>
+
+  <div class="bg-[#1e2937] border border-slate-700 rounded-3xl p-6 mb-6">
+    <h1 class="text-xl font-semibold mb-2">Click • Edit • Time Travel • Visualize</h1>
+    <p class="text-slate-300">Full interactive map of your 76-domain portfolio: core principles (live editable + real /api + pusher sync), memories, 40+ repo assets, tech (the pusher, quizbiz KV, tunnel, openclaw, wrangler), functions (audit, content factory, sync), scope layers against domains, progress (delight colors/sizes), and history scrubber from pusher .bak snapshots.</p>
+
+    <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+      <div class="bg-slate-900 rounded-2xl p-3"><span class="font-semibold text-violet-300">Edit live</span><br>Click principles → slider + comment → Save &amp; Sync (POST /api/principles + auto pusher when behind the tunnel)</div>
+      <div class="bg-slate-900 rounded-2xl p-3"><span class="font-semibold text-violet-300">Time travel</span><br>2 real historical principle states from 55 pusher baks (v1 5-principle vs v2 7-principle evolved flywheel). Animate or scrub.</div>
+      <div class="bg-slate-900 rounded-2xl p-3"><span class="font-semibold text-violet-300">Progress + Scope layers</span><br>Domain nodes colored + sized by delight. Scope halo = principles weights × delight + overrides. Toggleable.</div>
+      <div class="bg-slate-900 rounded-2xl p-3"><span class="font-semibold text-violet-300">Pusher simulation</span><br>Animate the exact bidirectional flow (local → KV → cloud dashboards + memory back to openclaw).</div>
+    </div>
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-3">
+    <a href="https://github.com/nnlevy/portfolio-relationship-map" class="flex-1 text-center px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl font-semibold">View source on GitHub</a>
+    <a href="https://nnlevy.github.io/portfolio-outreach-viewer/" class="flex-1 text-center px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl font-semibold">Related: Outreach Viewer</a>
+  </div>
+
+  <div class="mt-8 text-sm text-slate-400">
+    <strong>Access the full interactive version (recommended, with real edits + pusher trigger):</strong><br>
+    1. Ensure your control-panel server + tunnel is running (dsh-4f8e2a.quizbiz.org or local :8000)<br>
+    2. Visit <span class="font-mono text-emerald-300">/relationship-map</span> (or relationship-map.html) — same basic-auth as the dashboard.<br>
+    3. Or open the static HTML file directly from <span class="font-mono">.openclaw/workspace/control-panel/relationship-map.html</span> (demo mode with localStorage + export for principles.json).<br><br>
+    The map is deliberately a single self-contained HTML (Tailwind CDN + vanilla SVG + JS) so it costs $0 extra on Cloudflare. All persistence for edits reuses the existing principles POST + pusher machinery you already have.<br>
+    Full source committed alongside the control-panel in your workspace.
+  </div>
+
+  <div class="mt-6 text-xs text-slate-500">Built for Nir Levy's Domain OS — no additional KV, D1, Pages, or Worker resources used.</div>
+</div>
+</body></html>
